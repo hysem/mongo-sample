@@ -10,6 +10,9 @@ dep-logs:
 run:
 	go run main.go
 
+repset:
+	docker exec -it mongo-primary mongo --shell /docker-entrypoint-initdb.d/mongo.js
+
 app-run:
 	go mod vendor
 	docker-compose up --force-recreate  mongo-app
